@@ -1,0 +1,316 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;700;800&family=Noto+Sans+Warang+Citi&family=Open+Sans&family=Oxygen:wght@300;400;700&family=Roboto+Slab:wght@400;600;700&display=swap');
+@font-face {
+    font-family: 'Bahnschrift';
+    src: url(../Fonts/Bahnschrift/bahnschrift.ttf);
+}
+@font-face {
+    font-family: 'Gauge - Regular';
+    src: url(../Fonts/Gauge/Gauge-Regular.otf);
+}
+@font-face {
+    font-family: 'Gauge - Heavy';
+    src: url(../Fonts/Gauge/Gauge-Heavy.otf);
+}
+@font-face {
+    font-family: 'Roboto Mono - Regular';
+    src: url(../Fonts/Roboto\ Mono/RobotoMono-Regular.ttf);
+}
+
+*{
+    --ff-primary:'PT Sans Narrow', sans-serif;
+    --ff-secondary:'Hind Vadodara', sans-serif;
+    --ff-accent:'Rubik Vinyl', sans-serif;
+    --ff-cop-out:'Montserrat', sans-serif;
+
+    --ff-primary2:'Gauge - Regular', sans-serif;
+    --ff-secondary2: sans-serif;
+    --ff-accent2:'Roboto Mono - Regular', sans-serif;
+
+
+    --primary:#AF936E;
+    --secondary:#C6B08E;
+    --black:#010101;
+    --white:#f3f3f3;
+    --mission-statement:#E2EFE8     ;
+
+    --nav-height:10vh;
+    --nav-height-mini:2.5rem;
+
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 20px;
+}
+
+nav{
+    width: 100%;
+    height: var(--nav-height-mini);
+    position: fixed;
+    background-color: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 4;
+    padding: .25rem 1rem;
+    box-sizing: border-box;
+}
+
+ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style:none;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+
+}
+
+main{
+    z-index: 3;
+    position: relative;
+}
+
+section{
+    background-color: var(--white);
+}
+
+h2, h3, h4{
+    font-family: var(--ff-primary2);
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding: 0 1rem;
+}
+
+h2{
+    background: linear-gradient(0deg, rgba(175,147,110,1) 00%, rgba(198,176,142,1) 100%);
+    text-align: center;
+    font-family: var(--ff-primary2);
+    font-size: 1.6rem;
+}
+
+h3{
+    font-weight: 400;
+    font-family: var(--ff-accent2);
+    text-align: center;
+    margin: 3rem 0;
+    color: rgb(46, 46, 46);
+}
+
+h4{
+    font-size: 1.4rem;
+}
+
+p{
+    font-family: var(--ff-secondary2);
+    padding: 0 1rem;
+    line-height: 1.5rem;
+}
+
+footer{
+    background-color: var(--black);
+    color: var(--white);
+    z-index: 3;
+    position: relative;
+    font-family: var(--ff-accent2);
+    box-sizing: border-box;
+    padding: 1rem 1rem 0 1rem;
+}
+
+footer img{
+    width: 0rem;
+}
+
+/*
+    Specific Classes
+*/
+
+.deep-background{
+    background-image: url(../images/BackgroundTX/field-compressed.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+    position: absolute;
+    z-index: 1;
+    height: 100vh;
+    width: 100%;
+}
+
+.bg-filter{
+    background-color: black;
+    opacity: 20%;
+    position: absolute;
+    z-index: 2;
+    height: 100vh;
+    width: 100%;
+}
+
+.buffer{
+    height: var(--nav-height-mini);
+}
+
+.title{
+    background: none;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title img{
+    margin: -2rem 0;
+}
+
+.quote{
+    color:var(--white);
+    text-align: center;
+    font-size: .9rem;
+    margin-bottom: 3rem;
+}
+
+.service-banner{
+    max-width: 100%;
+    min-height: 2rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    font-family: var(--ff-secondary2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.3rem;
+}
+
+.circle{
+    max-width: .6rem;
+}
+
+.subtext{
+    font-size: .8rem;
+    text-align: center;
+    font-weight: 600;
+    padding: .5rem;
+}
+
+.mission-statement{
+    background-color: var(--mission-statement);
+    padding: 2rem 0 3rem 0;
+}
+
+.mission-statement h4{
+    text-align: center;
+    margin: 0 0 1rem 0;
+    letter-spacing: 0.01rem;
+    font-weight: 600;
+}
+
+.mission-statement p{
+    color:rgb(43, 42, 42)
+}
+
+.services h4{
+    padding: .5rem 1rem;
+    letter-spacing: .02rem;
+    font-weight: 600;
+}
+
+.services img{
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+
+.services p{
+    color: rgb(54, 54, 54);
+}
+
+@media (min-width:25rem){
+    .services img{
+        max-width: 400px;
+    }
+}
+
+.info-panel{
+    margin: 4rem 0;
+}
+
+.info-panel:first-child{
+    margin-top: 3rem;
+}
+
+.info-panel:last-child{
+    margin-bottom: 3rem;
+}
+
+.about{
+    background:none;
+    color: var(--white);
+}
+
+.about h4, .about p{
+    padding: 0;
+}
+
+.about h4{
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.02rem;
+}
+
+.about img{
+    margin-top: 1rem;
+}
+
+.about .container{
+    margin: 2rem 1rem;
+    padding: 1rem 0;
+    border-top: var(--white) solid 3px;
+    border-bottom: var(--white) solid 3px;
+}
+
+.contact{
+    padding: 2rem 0;
+    font-family: var(--ff-secondary2);
+}
+
+.contact h4{
+    padding-bottom: .5rem;
+    font-weight: 500;
+    font-family: var(--ff-secondary2);
+}
+
+/*
+    General Classes
+*/
+
+.border-accent{
+    border-top: var(--secondary) solid 2vh;
+    border-bottom: var(--secondary) solid 2vh;
+}
+
+.border-accent-bottom{
+    border-bottom: var(--primary) solid 0.5vh;
+}
+
+.border-white-top{
+    border-top: var(--white) solid 1px ;
+    padding-top: 0.4rem;
+    margin-top: 0.4rem;
+}
+
+.emphasis{
+    font-size: 1.1rem;
+}
+
+.light-gray{
+    color: #7a7a7a;
+}
+
+.dark-gray{
+    color: rgb(54, 54, 54);
+}
