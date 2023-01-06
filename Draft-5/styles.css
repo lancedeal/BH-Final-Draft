@@ -340,6 +340,10 @@ footer img{
     transition: .4s ease-in-out;
 }
 
+.nav-large img:hover{
+    cursor:pointer;
+}
+
 .nav-large ul{
     width: 34rem;
     display: flex;
