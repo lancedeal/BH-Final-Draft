@@ -396,7 +396,7 @@ footer img{
     max-width: 0rem;
     position: relative;
     top: .2rem;
-    align-self:center;
+    align-items:center;
 }
 
 .subtext{
