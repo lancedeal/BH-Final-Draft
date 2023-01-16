@@ -187,7 +187,6 @@
                 } else {
                     bg.style.backgroundImage = lowResTop
                 }
-                console.log('Image should be updated')
                 bgFilter.style.opacity = "20%"
                 bgSet = 1
             }
@@ -223,12 +222,10 @@
             if(imgTop.complete){
                 topReady = true
                 bg.style.backgroundImage = `url(${highResTop})`
-                console.log('Top Image Complete')
             } else {
                 imgTop.onload = () => {
                     topReady = true
                     bg.style.backgroundImage = `url(${highResTop})`
-                console.log('Top Image Loaded')
                 }
                 imgTop.onerror = (error) => { console.log(`Error: ${error}`) }
             }
@@ -236,18 +233,15 @@
             imgBottom = new Image()
             if(imgBottom.complete){
                 bottomReady = true
-                console.log('Bottom Image Complete')
             } else {
                 imgBottom.onload = () => {
                     bottomReady = true
-                console.log('Bottom Image Loaded')
                 }
                 imgBottom.onerror = (error) => { console.log(`Error: ${error}`) }
             }
             
             imgTop.src = highResTop
             imgBottom.src = highResBottom
-            console.log('Images Downloaded')
         }
 
     </script>
