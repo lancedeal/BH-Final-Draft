@@ -635,7 +635,11 @@ footer img{
 
     .info-panel{
         flex-direction: row;
-        align-items: center;
+        align-items: flex-start;
+    }
+    
+    .info-panel h4{
+        padding-top:0;
     }
 
     .services img{
