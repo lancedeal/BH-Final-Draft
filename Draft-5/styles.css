@@ -433,7 +433,7 @@ footer img{
 }
 
 .services h4{
-    padding: .5rem 0;
+    padding: 1rem 0;
     letter-spacing: .02rem;
     font-weight: 600;
 }
@@ -633,6 +633,10 @@ footer img{
         max-width: .6rem;
     }
 
+    .services h4{
+        padding: 0.5rem 0;
+    }
+    
     .info-panel{
         flex-direction: row;
         align-items: flex-start;
