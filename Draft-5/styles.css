@@ -427,6 +427,10 @@ footer img{
     font-size: 1.1rem;
 }
 
+.mission-statement a{
+    color: var(--black);
+}
+
 .services{
     display: flex;
     justify-content: center;
