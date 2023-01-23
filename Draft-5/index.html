@@ -253,6 +253,7 @@
         
         window.onload = function(){
 
+            // Once the page is completely loaded, swap the lower resolution images with a higher resolution
             imgTop = new Image()
             if(imgTop.complete){
                 topReady = true
@@ -289,6 +290,7 @@
                 imgBottom.onerror = (error) => { console.log(`Error: ${error}`) }
             }
             
+            // Starts Downloading Higher Resolution Images
             imgTop.src = highResTop
             imgBottom.src = highResBottom
         }
