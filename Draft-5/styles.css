@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap');
 @font-face {
     font-family: 'Bahnschrift';
     src: url(../Fonts/Bahnschrift/bahnschrift.ttf);
@@ -23,6 +22,10 @@
     font-family: 'Roboto Mono - 600';
     src: url(../Fonts/Roboto\ Mono/RobotoMono-Bold.ttf);
 }
+@font-face {
+    font-family: 'Montserrat - 400';
+    src: url(../Fonts/Montserrat/static/Montserrat-Regular.ttf);
+}
 
 *{
     --ff-primary:'Gauge - Regular', sans-serif;
@@ -30,7 +33,7 @@
     --ff-accent:'Roboto Mono - Regular', sans-serif;
     --ff-accent-500:'Roboto Mono - 500', sans-serif;
     --ff-accent-600:'Roboto Mono - 600', sans-serif;
-    --ff-accent2:'Montserrat', sans-serif;
+    --ff-accent2:'Montserrat - 400', sans-serif;
 
 
     --primary:#AF936E;
