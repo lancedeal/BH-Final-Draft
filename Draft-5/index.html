@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Have a home project but untamed brush is in your way? Bad Hog Land Clearing has you covered in all your landscaping and tree service needs. We are located in San Marcos, Texas and service surrounding areas. Because taming wilderness takes a force of nature.">
     <meta name="author" content="Lance Deal">
-    <title>BH Draft 5</title>
+    <title>Bad Hog Land Clearing</title>
     <link rel="icon" type="image/png" href="../images/BHFavicon.jpg">
     <link rel="apple-touch-icon" sizes="192x192" href="../images/BH-apple-touch-icon.png">
     <link rel="stylesheet" href="styles.css">
@@ -38,6 +38,8 @@
 
     <main>
         <section class="title">
+            <div class="title-background"></div>
+            <div class="title-filter"></div>
             <img id="logo" src="../images/Logo Art/BHLogo_3Wh.png" alt="Bad Hog Main Logo">
             <p class="quote"><i>Because Taming Wilderness Takes a Force of Nature</i></p>
         </section>
@@ -94,6 +96,8 @@
         </section>
         <div id="about-tag" class="nav-tag"></div>
         <section class="about">
+            <div class="about-background"></div>
+            <div class="about-filter"></div>
             <div class="container about-container">
                 <div>
                     <h4>About Us</h4>
@@ -134,6 +138,13 @@
         var bgSet = 1
         var switchingPoint = screen.availHeight
         const screenWidth = screen.availWidth
+        
+        const about = document.querySelector('.about')
+        const aboutBg = document.querySelector('.about-background')
+        const aboutFilter = document.querySelector('.about-filter')
+        const title = document.querySelector('.title')
+        const titleBg = document.querySelector('.title-background')
+        const titleFilter = document.querySelector('.title-filter')
 
         const navLarge = document.querySelector('.nav-large')
         const navLogo = document.querySelector('.nav-logo')
@@ -170,9 +181,11 @@
             )
         }
 
-        window.addEventListener('scroll', e => {
-            navLarge.classList.toggle('activated', window.pageYOffset > 0)
-            navLogo.classList.toggle('filled', window.pageYOffset > 0)
+        if(screenWidth >= 960){
+            // Enables parallax if screen is large
+            window.addEventListener('scroll', e => {
+                navLarge.classList.toggle('activated', window.pageYOffset > 0)
+                navLogo.classList.toggle('filled', window.pageYOffset > 0)
 
             bg.style.transform = `translate3d(0px, ${ window.pageYOffset * 1 }px, 0px`
             bgFilter.style.transform = `translate3d(0px, ${ window.pageYOffset * 1 }px, 0px`
@@ -194,6 +207,25 @@
                 bgSet = 1
             }
         })
+        } else {
+            // sets background images in case parallax is disabled
+            aboutFilter.style.opacity = '40%'
+            aboutBg.style.backgroundImage = lowResBottom
+            aboutBg.style.backgroundPosition = 'center'
+            aboutBg.style.backgroundSize = 'cover'
+            titleFilter.style.opacity = '20%'
+            titleBg.style.backgroundImage = lowResTop
+            titleBg.style.backgroundSize = 'cover'
+            titleBg.style.backgroundPosition = 'center'
+
+            bg.style.backgroundImage = ''
+
+            
+            window.addEventListener('scroll', e => {
+                navLarge.classList.toggle('activated', window.pageYOffset > 0)
+                navLogo.classList.toggle('filled', window.pageYOffset > 0)
+            })
+        }
         
         navLogo.addEventListener('click', e => {
             window.scrollTo(0, 0)
@@ -224,13 +256,19 @@
             imgTop = new Image()
             if(imgTop.complete){
                 topReady = true
-                bg.style.backgroundImage = `url(${highResTop})`
-                console.log('Top Image Complete')
+                if(screenWidth >= 960){
+                    bg.style.backgroundImage = `url(${highResTop})`
+                } else {
+                    titleBg.style.backgroundImage = `url(${highResTop})`
+                }
             } else {
                 imgTop.onload = () => {
                     topReady = true
-                    bg.style.backgroundImage = `url(${highResTop})`
-                    console.log('Top Image Ready')
+                    if(screenWidth >= 960){
+                        bg.style.backgroundImage = `url(${highResTop})`
+                    } else {
+                        titleBg.style.backgroundImage = `url(${highResTop})`
+                    }
                 }
                 imgTop.onerror = (error) => { console.log(`Error: ${error}`) }
             }
@@ -238,18 +276,21 @@
             imgBottom = new Image()
             if(imgBottom.complete){
                 bottomReady = true
-                console.log('Bottom Image Complete')
+                if(screenWidth < 960){
+                    aboutBg.style.backgroundImage = `url(${highResBottom})`
+                }
             } else {
                 imgBottom.onload = () => {
                     bottomReady = true
-                    console.log('Bottom Image Ready')
+                    if(screenWidth < 960){
+                        aboutBg.style.backgroundImage = `url(${highResBottom})`
+                    }
                 }
                 imgBottom.onerror = (error) => { console.log(`Error: ${error}`) }
             }
             
             imgTop.src = highResTop
             imgBottom.src = highResBottom
-            console.log('Images Downloaded')
         }
 
     </script>
