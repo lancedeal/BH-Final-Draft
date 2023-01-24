@@ -793,6 +793,10 @@ footer img{
         opacity: 100%;
         pointer-events: auto;
     }
+    
+    .nav-large img{
+        content: url('../images/Alternate_BHBoar/BHBoar_Invoice_Ts_WhTrim-100.webp');
+    }
 
     .nav-menu{
         opacity: 0;
