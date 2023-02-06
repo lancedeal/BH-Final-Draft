@@ -305,8 +305,7 @@ footer img{
     font-size: 1.4rem;
     padding: 0 1.5rem;
     transition: .4s ease-in-out;
-    opacity: 0;
-    pointer-events: none;
+    display: none;
 }
 
 .nav-large li{
@@ -575,8 +574,7 @@ footer img{
 }
 
 .contact .set-2{
-    opacity: 0;
-    pointer-events: none;
+    display:none;
     position: absolute;
     top: 8rem;
     font-size: .5rem;
@@ -601,7 +599,7 @@ footer img{
 }
 
 .footer-set-two{
-    opacity: 0;
+    display: none;
     position: absolute;
 }
 
@@ -753,13 +751,11 @@ footer img{
     }
 
     .set-1{
-        opacity: 0;
-        pointer-events: none;
+        display: none;
     }
 
     .contact .set-2{
-        opacity: 100%;
-        pointer-events: auto;
+        display: contents;
         font-size: 1.4rem;
     }
 
@@ -785,13 +781,11 @@ footer img{
     }
 
     .nav-little{
-        opacity: 0;
-        pointer-events: none;
+        display: none;
     }
 
     .nav-large{
-        opacity: 100%;
-        pointer-events: auto;
+        display: flex;
     }
     
     .nav-large img{
@@ -799,8 +793,7 @@ footer img{
     }
 
     .nav-menu{
-        opacity: 0;
-        pointer-events: none;
+        display:none;
     }
     
     /*  Footer  */
@@ -816,11 +809,11 @@ footer img{
     }
 
     .footer-set-one{
-        opacity: 0;
+        display: none;
     }
 
     .footer-set-two{
-        opacity: 100%;
+        display: contents;
         display: flex;
         align-items: center;
     }
